@@ -7,7 +7,7 @@ public class teloginreturn : MonoBehaviour
 {
     public void teLoginreturn()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 7);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 9);
     }
 
 

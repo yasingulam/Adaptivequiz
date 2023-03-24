@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement; //This is an imported class which I will be u
 
 public class QuiztoAnalytics : MonoBehaviour
 {
-    public static string option;
+
 
     public void quiztoanalytics()
     {
         //makes the option menu so thaat the saving script knows where to go after
-        option = "menu";
+        SavingScriptDecider.option = "menu";
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

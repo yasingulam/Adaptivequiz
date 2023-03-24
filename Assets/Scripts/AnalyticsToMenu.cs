@@ -8,7 +8,7 @@ public class AnalyticsToMenu : MonoBehaviour
 {
     public void returnanalytics()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 6);
     }
 
 }

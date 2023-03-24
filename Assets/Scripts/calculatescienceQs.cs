@@ -54,7 +54,17 @@ public class calculatescienceQs : MonoBehaviour
             chemistryQuestionCount = Mathf.RoundToInt((30 * chemistryProportion) / 2);
             physicsQuestionCount = Mathf.RoundToInt((30 * physicsProportion) / 2);
             int totalquestions = biologyQuestionCount + chemistryQuestionCount + physicsQuestionCount;
+            if (totalquestions < 30)
+            {
+                physicsQuestionCount++;
+                totalquestions = biologyQuestionCount + chemistryQuestionCount + physicsQuestionCount;
 
+            }
+            if (totalquestions > 30)
+            {
+                chemistryQuestionCount = chemistryQuestionCount - 1;
+                totalquestions = biologyQuestionCount + chemistryQuestionCount + physicsQuestionCount;
+            }
 
             Debug.Log("biologynumber qs: " + biologyQuestionCount);
             Debug.Log("chemistrynumber qs: " + chemistryQuestionCount);

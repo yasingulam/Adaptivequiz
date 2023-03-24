@@ -54,7 +54,17 @@ public class calculatecomputingQs : MonoBehaviour
             softwareQuestionCount = Mathf.RoundToInt((30 * softwareProportion) / 2);
             programmingQuestionCount = Mathf.RoundToInt((30 * programmingProportion) / 2);
             int totalquestions = hardwareQuestionCount + softwareQuestionCount + programmingQuestionCount;
+            if (totalquestions < 30)
+            {
+                programmingQuestionCount++;
+                totalquestions = hardwareQuestionCount + softwareQuestionCount + programmingQuestionCount;
 
+            }
+            if (totalquestions > 30)
+            {
+                softwareQuestionCount = softwareQuestionCount - 1;
+                totalquestions = hardwareQuestionCount + softwareQuestionCount + programmingQuestionCount;
+            }
 
             Debug.Log("hardwarenumber qs: " + hardwareQuestionCount);
             Debug.Log("softwarenumber qs: " + softwareQuestionCount);

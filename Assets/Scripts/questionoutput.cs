@@ -36,6 +36,7 @@ public class questionoutput : MonoBehaviour
         if (questiongenerator.questionnumber == 31)
         {
             countDown = false; //stop the timer
+            updates = false;
         }
 
 

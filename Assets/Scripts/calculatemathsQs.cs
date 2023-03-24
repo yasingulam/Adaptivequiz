@@ -59,6 +59,18 @@ public class calculatemathsQs : MonoBehaviour
             fdpQuestionCount = Mathf.RoundToInt((30 * fdpProportion) / 2);
             int totalquestions = algebraQuestionCount + arithmeticQuestionCount + fdpQuestionCount;
 
+            if (totalquestions < 30)
+            {
+                algebraQuestionCount++;
+                totalquestions = algebraQuestionCount + arithmeticQuestionCount + fdpQuestionCount;
+
+            }
+            if (totalquestions > 30) 
+            {
+                arithmeticQuestionCount = arithmeticQuestionCount - 1;
+                totalquestions = algebraQuestionCount + arithmeticQuestionCount + fdpQuestionCount;
+            }
+
 
             Debug.Log("algebranumber qs: " + algebraQuestionCount);
             Debug.Log("arithmeticnumber qs: " + arithmeticQuestionCount);

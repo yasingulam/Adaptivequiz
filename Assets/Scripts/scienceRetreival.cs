@@ -64,5 +64,6 @@ public class scienceRetreival : MonoBehaviour
         Debug.Log("Physics Asked: " + physicsAsked);
         Debug.Log("Physics Correct: " + physicsCorrect);
         www.Dispose();
+        
     }
 }

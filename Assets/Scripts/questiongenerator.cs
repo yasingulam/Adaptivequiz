@@ -56,12 +56,29 @@ public class questiongenerator : MonoBehaviour
     public int percentagescore;
 
     public static string correctans; // defining the correct answer into a variable
-    public static bool questiondisplayed=false;//there is no question currently set
+    public static bool questiondisplayed;//there is no question currently set
     public static int questionnumber;//what is the current number?
     public string questiontopic;// what is the topic
-    
-    
-    
+
+    // for the end part
+    public static int algebraAskedi;
+    public static int arithmeticAskedi;
+    public static int fdpAskedi;
+    public static int algebraCorrecti;
+    public static int arithmeticCorrecti;
+    public static int fdpCorrecti;
+    public static int biologyAskedi;
+    public static int chemistryAskedi;
+    public static int physicsAskedi;
+    public static int biologyCorrecti;
+    public static int chemistryCorrecti;
+    public static int physicsCorrecti;
+    public static int hardwareAskedi;
+    public static int softwareAskedi;
+    public static int programmingAskedi;
+    public static int hardwareCorrecti;
+    public static int softwareCorrecti;
+    public static int programmingCorrecti;
 
 
 
@@ -71,7 +88,7 @@ public class questiongenerator : MonoBehaviour
     void Start()
     {
         panel.SetActive(false);//makes sure the window is not active
-
+        questiondisplayed = false;
         questionnumber = 1;
         if (beginQuiz.parsedsubject == "maths")
         {
@@ -190,6 +207,7 @@ public class questiongenerator : MonoBehaviour
     void Update()
     {
         //Debug.Log(beginQuiz.parsedsubject);
+        enabled = true;
        
 
         if (questiondisplayed == false) //checks if there is a question being displayed
@@ -544,6 +562,7 @@ public class questiongenerator : MonoBehaviour
                 //questiondisplayed = true;
                 panel.SetActive(true);//makes sure the window is not active
                 StartCoroutine(Savedata());//call the coroutine for the end of the quiz
+                enabled = false;
 
 
 
@@ -556,36 +575,36 @@ public class questiongenerator : MonoBehaviour
     IEnumerator Savedata()
     {
         yield return new WaitForSeconds(0.001f);//wait for two before moving on
-        int algebraAsked = int.Parse(mathRetreival.algebraAsked);
-        int arithmeticAsked = int.Parse(mathRetreival.arithmeticAsked);
-        int fdpAsked = int.Parse(mathRetreival.fdpAsked);
-        int algebraCorrect = int.Parse(mathRetreival.algebraCorrect);
-        int arithmeticCorrect = int.Parse(mathRetreival.arithmeticCorrect);
-        int fdpCorrect = int.Parse(mathRetreival.fdpCorrect);
-        int biologyAsked = int.Parse(scienceRetreival.biologyAsked);
-        int chemistryAsked = int.Parse(scienceRetreival.chemistryAsked);
-        int physicsAsked = int.Parse(scienceRetreival.physicsAsked);
-        int biologyCorrect = int.Parse(scienceRetreival.biologyCorrect);
-        int chemistryCorrect = int.Parse(scienceRetreival.chemistryCorrect);
-        int physicsCorrect = int.Parse(scienceRetreival.physicsCorrect);
-        int hardwareAsked = int.Parse(compRetreival.hardwareAsked);
-        int softwareAsked = int.Parse(compRetreival.softwareAsked);
-        int programmingAsked = int.Parse(compRetreival.programmingAsked);
-        int hardwareCorrect = int.Parse(compRetreival.hardwareCorrect);
-        int softwareCorrect = int.Parse(compRetreival.softwareCorrect);
-        int programmingCorrect = int.Parse(compRetreival.programmingCorrect);
+        algebraAskedi = int.Parse(mathRetreival.algebraAsked);
+        arithmeticAskedi = int.Parse(mathRetreival.arithmeticAsked);
+        fdpAskedi = int.Parse(mathRetreival.fdpAsked);
+        algebraCorrecti = int.Parse(mathRetreival.algebraCorrect);
+        arithmeticCorrecti = int.Parse(mathRetreival.arithmeticCorrect);
+        fdpCorrecti = int.Parse(mathRetreival.fdpCorrect);
+        biologyAskedi = int.Parse(scienceRetreival.biologyAsked);
+        chemistryAskedi = int.Parse(scienceRetreival.chemistryAsked);
+        physicsAskedi = int.Parse(scienceRetreival.physicsAsked);
+        biologyCorrecti = int.Parse(scienceRetreival.biologyCorrect);
+        chemistryCorrecti= int.Parse(scienceRetreival.chemistryCorrect);
+        physicsCorrecti = int.Parse(scienceRetreival.physicsCorrect);
+        hardwareAskedi = int.Parse(compRetreival.hardwareAsked);
+        softwareAskedi = int.Parse(compRetreival.softwareAsked);
+        programmingAskedi = int.Parse(compRetreival.programmingAsked);
+        hardwareCorrecti = int.Parse(compRetreival.hardwareCorrect);
+        softwareCorrecti = int.Parse(compRetreival.softwareCorrect);
+        programmingCorrecti = int.Parse(compRetreival.programmingCorrect);
 
 
         if (beginQuiz.parsedsubject == "maths")
         {
 
             //updates students progress in variables
-            algebraAsked += calculatemathsQs.algebraQuestionCount;
-            arithmeticAsked += calculatemathsQs.arithmeticQuestionCount;
-            fdpAsked += calculatemathsQs.fdpQuestionCount;
-            algebraCorrect += answering.topic1correct;
-            arithmeticCorrect += answering.topic2correct;
-            fdpCorrect += answering.topic3correct;
+            algebraAskedi += calculatemathsQs.algebraQuestionCount;
+            arithmeticAskedi += calculatemathsQs.arithmeticQuestionCount;
+            fdpAskedi += calculatemathsQs.fdpQuestionCount;
+            algebraCorrecti += answering.topic1correct;
+            arithmeticCorrecti += answering.topic2correct;
+            fdpCorrecti += answering.topic3correct;
             //calculates %correct and correctly answered
             totalmathsscore = answering.topic1correct + answering.topic2correct + answering.topic3correct;
             percentagescore = Convert.ToInt32(((float)totalmathsscore / 30) * 100);
@@ -602,13 +621,13 @@ public class questiongenerator : MonoBehaviour
         if (beginQuiz.parsedsubject == "science")
         {
             //updates students progress in variables for science
-            biologyAsked += calculatescienceQs.biologyQuestionCount;
-            chemistryAsked += calculatescienceQs.chemistryQuestionCount;
-            physicsAsked += calculatescienceQs.physicsQuestionCount;
-            biologyCorrect += answering.topic1correct;
-            chemistryCorrect += answering.topic2correct;
+            biologyAskedi += calculatescienceQs.biologyQuestionCount;
+            chemistryAskedi += calculatescienceQs.chemistryQuestionCount;
+            physicsAskedi += calculatescienceQs.physicsQuestionCount;
+            biologyCorrecti = biologyCorrecti+answering.topic1correct;
+            chemistryCorrecti = chemistryCorrecti+answering.topic2correct;
             
-            physicsCorrect += answering.topic3correct;
+            physicsCorrecti = physicsCorrecti+answering.topic3correct;
             //calculates %correct and correctly answered
             totalsciencescore = answering.topic1correct + answering.topic2correct + answering.topic3correct;
             percentagescore = Convert.ToInt32(((float)totalsciencescore / 30) * 100);
@@ -617,20 +636,20 @@ public class questiongenerator : MonoBehaviour
             timetakenend.GetComponent<Text>().text = "Time: " + questionoutput.integerTimes.ToString() + " seconds";
             questionscorrect.GetComponent<Text>().text = "total score: " + totalsciencescore.ToString();
             correctpercentage.GetComponent<Text>().text = "percentage: " + percentagescore.ToString() + "%";
-            Debug.Log("chem correct "+chemistryCorrect);
-            Debug.Log("bio correct " + biologyCorrect);
-            Debug.Log("physics asked " + physicsAsked);
+            Debug.Log("chem correct "+chemistryCorrecti);
+            Debug.Log("bio correct " + biologyCorrecti);
+            Debug.Log("physics asked " + physicsAskedi);
 
         }
         if (beginQuiz.parsedsubject == "computing")
         {
             // updates students progress in variables
-            hardwareAsked += calculatecomputingQs.hardwareQuestionCount;
-            softwareAsked += calculatecomputingQs.softwareQuestionCount;
-            programmingAsked += calculatecomputingQs.programmingQuestionCount;
-            hardwareCorrect += answering.topic1correct;
-            softwareCorrect += answering.topic2correct;
-            programmingCorrect += answering.topic3correct;
+            hardwareAskedi = hardwareAskedi+calculatecomputingQs.hardwareQuestionCount;
+            softwareAskedi += calculatecomputingQs.softwareQuestionCount;
+            programmingAskedi += calculatecomputingQs.programmingQuestionCount;
+            hardwareCorrecti += answering.topic1correct;
+            softwareCorrecti += answering.topic2correct;
+            programmingCorrecti += answering.topic3correct;
             //calculates %correct and correctly answered
             totalcomputingscore = answering.topic1correct + answering.topic2correct + answering.topic3correct;
             percentagescore = Convert.ToInt32(((float)totalcomputingscore / 30) * 100);

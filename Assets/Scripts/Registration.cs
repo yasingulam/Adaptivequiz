@@ -42,7 +42,7 @@ public class Registration : MonoBehaviour
 
     public void VerifyInputs()// VALIDATION!!!!
     {
-        submitButton.interactable = (nameField.text.Length >= 3 && passwordField.text.Length >= 3);// ensures username and password are greter than 3 characters each This is validation.
+        submitButton.interactable = (nameField.text.Length >= 1 && passwordField.text.Length >= 1);// ensures username and password are greter than 3 characters each This is validation.
 
     }
 }

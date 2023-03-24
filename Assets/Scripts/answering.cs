@@ -42,6 +42,10 @@ public class answering : MonoBehaviour
     void Start()
     {
         questionnum = 1;
+        topic1correct = 0;
+        topic2correct = 0;
+        topic3correct = 0;
+
     }
     void Update() 
     {
@@ -65,15 +69,15 @@ public class answering : MonoBehaviour
  
             if ((questionoutput.displayedtopic == "biology") ||(questionoutput.displayedtopic == "algebra") ||(questionoutput.displayedtopic == "hardware"))//checks if its the topic 1s 
             {
-                topic1correct += 1;
+                topic1correct++;
             }
             if ((questionoutput.displayedtopic == "chemistry") || (questionoutput.displayedtopic == "arithmetic") || (questionoutput.displayedtopic == "software"))//checks if its the topic 2s 
             {
-                topic2correct += 1;
+                topic2correct++;
             }
             if ((questionoutput.displayedtopic == "physics") || (questionoutput.displayedtopic == "FDP") || (questionoutput.displayedtopic == "programming"))//checks if its the topic 1s 
             {
-                topic3correct += 1;
+                topic3correct++;
             }
 
 
@@ -114,15 +118,15 @@ public class answering : MonoBehaviour
             correctSound.Play();
             if ((questionoutput.displayedtopic == "biology") ||(questionoutput.displayedtopic == "algebra") ||(questionoutput.displayedtopic == "hardware"))//checks if its the topic 1s 
             {
-                topic1correct += 1;
+                topic1correct++;
             }
             if ((questionoutput.displayedtopic == "chemistry") || (questionoutput.displayedtopic == "arithmetic") || (questionoutput.displayedtopic == "software"))//checks if its the topic 2s 
             {
-                topic2correct += 1;
+                topic2correct++;
             }
             if ((questionoutput.displayedtopic == "physics")||(questionoutput.displayedtopic == "FDP")||(questionoutput.displayedtopic == "programming"))//checks if its the topic 1s 
             {
-                topic3correct += 1;
+                topic3correct++;
             }
         }
         else
