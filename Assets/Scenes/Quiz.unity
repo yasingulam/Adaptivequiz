@@ -1781,6 +1781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6e0dcd146f83444a7c319aea28159f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &688481580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1793,6 +1795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad37a235bd56a9b4aaf923f2a49a1c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &688481581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1842,8 +1846,8 @@ Canvas:
   m_GameObject: {fileID: 688481578}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 827141055}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1894,6 +1898,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2346a12dc33f94c95b7454bbe37561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &688481586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1906,6 +1912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8990fe54f14dfc345a8bf59f8983ebbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &688481587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1918,6 +1926,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e70a806e4e1da940ae6e439f4652788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &688481588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2008,6 +2018,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16332f4d993b34045af9859e7cf3a0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: StudentMenu
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &688481592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2020,6 +2032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66752bbae5a5b34596a5cf23deb3c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: Saving screen
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &688481593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2058,6 +2072,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a7f728ab0fbb94b874d774d0a1ed52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: Saving screen
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &717142405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,7 +2732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827141053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 310, y: 388, z: -1007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

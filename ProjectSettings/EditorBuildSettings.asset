@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TeacherAnalytics.unity
     guid: c00647edc3e684c4cb778c94aadff1bf
+  - enabled: 1
+    path: Assets/Scenes/TeacherSettings.unity
+    guid: 6cd646745e8276742bc15dbe66193dc7
   m_configObjects: {}

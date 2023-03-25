@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;//used to switch scene and log the user in
 public class TeacherLogin : MonoBehaviour
 
 {
+    public string scene;//add name of scene 
+    public Color loadToColor = Color.black;
     public InputField inputField;
     public int pin = 123456;
     
@@ -21,7 +23,7 @@ public class TeacherLogin : MonoBehaviour
     {
         if (inputField.text == pin.ToString())
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Initiate.Fade(scene, loadToColor, 2.3f);//new change in scene function
 
         }
         else

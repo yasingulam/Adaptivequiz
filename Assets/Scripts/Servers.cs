@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;//used to switch scene and log the user in
 public class Servers : MonoBehaviour
 
 
+
 {
     public static string currentusername;// defines variable as a global variable(currentusername) to be used for various reasons in different scripts
-
+    public string scene;//add name of scene 
+    public Color loadToColor = Color.black;
 
     [Space]
     [SerializeField] InputField username;
@@ -60,7 +62,7 @@ public class Servers : MonoBehaviour
                 {
                     //Success
                     successmessage.text = "valid username or password!";
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    Initiate.Fade(scene, loadToColor, 2.3f);
                     errormessage.text = "";
                     Servers.currentusername = username.text;
 

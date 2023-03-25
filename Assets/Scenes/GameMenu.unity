@@ -1016,7 +1016,6 @@ GameObject:
   - component: {fileID: 688481583}
   - component: {fileID: 688481582}
   - component: {fileID: 688481581}
-  - component: {fileID: 688481580}
   - component: {fileID: 688481579}
   - component: {fileID: 688481585}
   - component: {fileID: 688481586}
@@ -1041,18 +1040,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e6e0dcd146f83444a7c319aea28159f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &688481580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688481578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad37a235bd56a9b4aaf923f2a49a1c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &688481581
@@ -1104,8 +1091,8 @@ Canvas:
   m_GameObject: {fileID: 688481578}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 827141055}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1153,6 +1140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2346a12dc33f94c95b7454bbe37561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: StudentMenu
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &688481586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,6 +1178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b91377a1f1a264da5953a0719d1f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: Loading Screen
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
   messageText: {fileID: 772067005}
 --- !u!114 &688481590
 MonoBehaviour:
@@ -1527,7 +1518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827141053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 310, y: 388, z: -1007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement; //This is an imported class which I will be u
 
 public class SavingScriptDecider : MonoBehaviour
 {
+    public string analyticsscene;//add name of scene 
+    public string menuscene;//add name of scene 
+    //2 scenes needed
+    public Color loadToColor = Color.black;
+
     public static string option;
     // Get the value of parsedsubject from the beginQuiz script
     string parsedsubject = beginQuiz.parsedsubject;
@@ -27,11 +32,11 @@ public class SavingScriptDecider : MonoBehaviour
             yield return new WaitForSeconds(3.4f);
             if (option == "analytics")
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                Initiate.Fade(analyticsscene, loadToColor, 2.3f);
             }
-            else
+            else//Could go to either analytics or menu
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
+                Initiate.Fade(menuscene, loadToColor, 2.3f);
             }
         }
 
@@ -45,11 +50,11 @@ public class SavingScriptDecider : MonoBehaviour
             yield return new WaitForSeconds(3.4f);
             if (option == "analytics")
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                Initiate.Fade(analyticsscene, loadToColor, 2.3f);
             }
             else
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
+                Initiate.Fade(menuscene, loadToColor, 2.3f);
             }
 
 
@@ -61,11 +66,11 @@ public class SavingScriptDecider : MonoBehaviour
             yield return new WaitForSeconds(3.4f);
             if (option == "analytics")
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                Initiate.Fade(analyticsscene, loadToColor, 2.3f);
             }
             else
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
+                Initiate.Fade(menuscene, loadToColor, 2.3f);
             }
         }
 

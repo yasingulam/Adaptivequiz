@@ -9,6 +9,8 @@ public class ScriptDecider : MonoBehaviour
 {
     // Get the value of parsedsubject from the beginQuiz script
     string parsedsubject = beginQuiz.parsedsubject;
+    public string scene;//add name of scene 
+    public Color loadToColor = Color.black;
 
     // This method is called when the script is first loaded
     public void Start()
@@ -24,7 +26,7 @@ public class ScriptDecider : MonoBehaviour
             QuestionLoaderMaths loader = gameObject.AddComponent<QuestionLoaderMaths>();
             loader.Start();
             yield return new WaitForSeconds(3.4f);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Initiate.Fade(scene, loadToColor, 2.3f);
         }
         // If the parsedsubject is "science", add the QuestionLoaderScience script to the gameObject and start it
         else if (parsedsubject == "science")
@@ -32,14 +34,14 @@ public class ScriptDecider : MonoBehaviour
             QuestionLoaderScience loader = gameObject.AddComponent<QuestionLoaderScience>();
             loader.Start();
             yield return new WaitForSeconds(3.4f);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Initiate.Fade(scene, loadToColor, 2.3f);
         }
         else if (parsedsubject == "computing")
         {
             QuestionLoaderComputing loader = gameObject.AddComponent<QuestionLoaderComputing>();
             loader.Start();
             yield return new WaitForSeconds(3.4f);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Initiate.Fade(scene, loadToColor, 2.3f);
         }
         // If the parsedsubject is neither "maths" nor "science", log an error message to the console
         else

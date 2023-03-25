@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement; //This is an imported class which I will be u
 
 public class beginQuiz : MonoBehaviour
 {
-
+    public string scene;//add name of scene 
+    public Color loadToColor = Color.black;
     // Reference to the Text component to display messages
     public Text messageText;
 
@@ -33,20 +34,20 @@ public class beginQuiz : MonoBehaviour
         {
             // If option is 1, set parsedsubject to "computing"
             parsedsubject = "computing";
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);//go to quiz
+            Initiate.Fade(scene, loadToColor, 2.3f);
 
         }
         else if (DropDown.option == 2)
         {
             // If option is 2, set parsedsubject to "maths"
             parsedsubject = "maths";
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);//go to quiz
+            Initiate.Fade(scene, loadToColor, 2.3f);
         }
         else if (DropDown.option == 3)
         {
             // If option is 3, set parsedsubject to "science"
             parsedsubject = "science";
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);//go to quiz
+            Initiate.Fade(scene, loadToColor, 2.3f);
         }
         Debug.Log(parsedsubject);
     }

@@ -239,6 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292d3cea7b67ad34fb486a918dbceca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &302342121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,8 +314,8 @@ Canvas:
   m_GameObject: {fileID: 302342119}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 819144885}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -360,6 +362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4583596a90ca54b4996a8f87f2ec3df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: UserSelection
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &302342128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c5ac9751932ee46b8c8a24b88aa276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: TeacherMenu
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
   inputField: {fileID: 971670959}
   pin: 123456
   errorMessage: {fileID: 798747400}
@@ -761,7 +767,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819144883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 310, y: 388, z: -1007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

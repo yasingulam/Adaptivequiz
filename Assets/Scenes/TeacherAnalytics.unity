@@ -292,7 +292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &25184825
@@ -713,6 +713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 478666899123835449b3bdeb044e3219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &432993341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,6 +727,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292d3cea7b67ad34fb486a918dbceca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &432993342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,6 +741,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45c79b78127b3143968f82bd1011122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &432993343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,8 +804,8 @@ Canvas:
   m_GameObject: {fileID: 432993339}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1548486680}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -889,6 +895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8990fe54f14dfc345a8bf59f8983ebbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: TeacherMenu
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &432993352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,6 +909,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad37a235bd56a9b4aaf923f2a49a1c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &656991502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,7 +1261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efb7a4885b6afc49917f7d57b7d0fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentuser: {fileID: 766750688}
 --- !u!114 &811409183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2271,7 +2280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548486678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 310, y: 388, z: -1007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
