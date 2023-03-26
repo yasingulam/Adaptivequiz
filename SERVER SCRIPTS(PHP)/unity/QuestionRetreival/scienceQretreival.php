@@ -22,7 +22,7 @@ $physicsCount = $_GET["physicsquestioncount"];
 //$sql = "SELECT Question, Option1, Option2, Option3, Option4, correctanswer, questionsubject, questiontopic FROM sciencequestions ";
 
 // Add WHERE clauses to filter by topic and limit number of questions
-$sql = " (SELECT Question, Option1, Option2, Option3, Option4, correctanswer, questionsubject, questiontopic FROM sciencequestions WHERE (questiontopic='biology' AND questionsubject='science')  LIMIT $biologyCount )";
+$sql = " (SELECT Question, Option1, Option2, Option3, Option4, correctanswer, questionsubject, questiontopic FROM sciencequestions WHERE (questiontopic='biology' AND questionsubject='science') ORDER BY RAND() LIMIT $biologyCount )";
 $sql .= "UNION";
 $sql .= "(SELECT Question, Option1, Option2, Option3, Option4, correctanswer, questionsubject, questiontopic FROM sciencequestions WHERE (questiontopic='chemistry' AND questionsubject='science') ORDER BY RAND() LIMIT $chemistryCount )";
 $sql .= "UNION";

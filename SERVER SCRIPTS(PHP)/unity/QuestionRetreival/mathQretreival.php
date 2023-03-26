@@ -22,7 +22,7 @@ $fdpCount = $_GET["fdpquestioncount"];
 // Prepare SQL query to get questions from database
 
 // Add WHERE clauses to filter by topic and limit number of questions
-$sql = "(SELECT Question, Option1, Option2, Option3, Option4, correctanswer, questionsubject, questiontopic FROM mathsquestions WHERE (questiontopic='algebra' AND questionsubject='maths') LIMIT $algebraCount )";
+$sql = "(SELECT Question, Option1, Option2, Option3, Option4, correctanswer, questionsubject, questiontopic FROM mathsquestions WHERE (questiontopic='algebra' AND questionsubject='maths') ORDER BY RAND() LIMIT $algebraCount )";
 $sql .= " UNION ";
 $sql .= "(SELECT Question, Option1, Option2, Option3, Option4, correctanswer, questionsubject, questiontopic FROM mathsquestions WHERE (questiontopic='arithmetic' AND questionsubject='maths') ORDER BY RAND() LIMIT $arithmeticCount )";
 $sql .= " UNION ";

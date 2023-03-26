@@ -22,7 +22,7 @@ $programmingCount = $_GET["programmingquestioncount"];
 //$sql = "SELECT Question, Option1, Option2, Option3, Option4, correctanswer, questionsubject, questiontopic FROM computingquestions ";
 
 // Add WHERE clauses to filter by topic and limit number of questions
-$sql = " (SELECT Question, Option1, Option2, Option3, Option4, correctanswer, questionsubject, questiontopic FROM computingquestions WHERE (questiontopic='hardware' AND questionsubject='computing')  LIMIT $hardwareCount )";
+$sql = " (SELECT Question, Option1, Option2, Option3, Option4, correctanswer, questionsubject, questiontopic FROM computingquestions WHERE (questiontopic='hardware' AND questionsubject='computing') ORDER BY RAND() LIMIT $hardwareCount )";
 $sql .= "UNION";
 $sql .= "(SELECT Question, Option1, Option2, Option3, Option4, correctanswer, questionsubject, questiontopic FROM computingquestions WHERE (questiontopic='software' AND questionsubject='computing') ORDER BY RAND() LIMIT $softwareCount )";
 $sql .= "UNION";

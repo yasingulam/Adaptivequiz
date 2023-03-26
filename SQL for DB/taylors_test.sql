@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2023 at 02:42 PM
+-- Generation Time: Mar 26, 2023 at 05:25 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -212,7 +212,6 @@ INSERT INTO `login` (`studentid`, `username`, `password`) VALUES
 -- Triggers `login`
 --
 DELIMITER $$
-<<<<<<< HEAD
 CREATE TRIGGER `insert_student_progress` AFTER INSERT ON `login` FOR EACH ROW BEGIN
   INSERT INTO studentprogress_computing (username, computingoverall, overallaverage, hardware_asked, hardware_correct, software_asked, software_correct, programming_asked, programming_correct)
   VALUES (NEW.username, 0, 0, 0, 0, 0, 0, 0, 0);
@@ -222,17 +221,6 @@ CREATE TRIGGER `insert_student_progress` AFTER INSERT ON `login` FOR EACH ROW BE
   
   INSERT INTO studentprogress_science (username, scienceoverall, overallaverage, biology_asked, biology_correct, chemistry_asked, chemistry_correct, physics_asked, physics_correct)
   VALUES (NEW.username, 0, 0, 0, 0, 0, 0, 0, 0);
-=======
-CREATE TRIGGER `insert_student_progress` AFTER INSERT ON `login` FOR EACH ROW BEGIN
-  INSERT INTO studentprogress_computing (username, computingoverall, overallaverage, hardware_asked, hardware_correct, software_asked, software_correct, programming_asked, programming_correct)
-  VALUES (NEW.username, 0, 0, 0, 0, 0, 0, 0, 0);
-  
-  INSERT INTO studentprogress_maths (username, mathsoverall, overallaverage, algebra_asked, algebra_correct, arithmetic_asked, arithmetic_correct, fdp_asked, fdp_correct)
-  VALUES (NEW.username, 0, 0, 0, 0, 0, 0, 0, 0);
-  
-  INSERT INTO studentprogress_science (username, scienceoverall, overallaverage, biology_asked, biology_correct, chemistry_asked, chemistry_correct, physics_asked, physics_correct)
-  VALUES (NEW.username, 0, 0, 0, 0, 0, 0, 0, 0);
->>>>>>> 132edc3acd95d5622477cae6d8095b2ab1e2b39e
 END
 $$
 DELIMITER ;
@@ -403,7 +391,19 @@ INSERT INTO `mathsquestions` (`Question`, `Option1`, `Option2`, `Option3`, `Opti
 ('What is 3 x 9?', '27', '24', '21', '18', '27', 'maths', 'arithmetic'),
 ('What is 45 ÷ 5?', '9', '8', '7', '6', '9', 'maths', 'arithmetic'),
 ('What is 24 + 18?', '42', '41', '40', '39', '42', 'maths', 'arithmetic'),
-('What is 56 - 36?', '20', '19', '18', '17', '20', 'maths', 'arithmetic');
+('What is 56 - 36?', '20', '19', '18', '17', '20', 'maths', 'arithmetic'),
+('Solve for x: 2x + 3 = 7', 'x = 2', 'x = 4', 'x = 8', 'x = 10', 'x = 2', 'maths', 'algebra'),
+('Solve for x: 3x - 8 = 10', 'x = 6', 'x = 8', 'x = 9', 'x = 11', 'x = 6', 'maths', 'algebra'),
+('Solve for x: 4(x + 5) = 56', 'x = 6', 'x = 7', 'x = 8', 'x = 9', 'x = 6', 'maths', 'algebra'),
+('Solve for x: 2(x - 3) = 14', 'x = 10', 'x = 11', 'x = 12', 'x = 13', 'x = 10', 'maths', 'algebra'),
+('Solve for x: 5x - 2 = 3x + 10', 'x = 4', 'x = 6', 'x = 8', 'x = 10', 'x = 4', 'maths', 'algebra'),
+('Solve for x: 2x + 4 = x - 5', 'x = -9', 'x = -8', 'x = -7', 'x = -6', 'x = -9', 'maths', 'algebra'),
+('Solve for x: 3x + 2 = 5(x - 1)', 'x = 3', 'x = 4', 'x = 5', 'x = 6', 'x = 3', 'maths', 'algebra'),
+('Solve for x: 4(x - 3) + 2 = 2x', 'x = 5/2', 'x = 3/2', 'x = 1/2', 'x = -1/2', 'x = 5/2', 'maths', 'algebra'),
+('Solve for x: 2(3x + 4) = 16', 'x = 2', 'x = 3', 'x = 4', 'x = 5', 'x = 2', 'maths', 'algebra'),
+('Solve for x: 5(x - 2) + 4 = 4(', 'x = 7', 'x = 8', 'x = 9', 'x = 10', 'x = 7', 'maths', 'algebra'),
+('Solve for x: (3x + 2)/5 = 7', 'x = 33/5', 'x = 31/5', 'x = 29/5', 'x = 27/5', 'x = 33/5', 'maths', 'algebra'),
+('Solve for x: 2x - 3 = 5 - 3x', 'x = 8/5', 'x = 7/5', 'x = 6/5', 'x = 5/5', 'x = 8/5', 'maths', 'algebra');
 
 -- --------------------------------------------------------
 
@@ -439,44 +439,65 @@ INSERT INTO `sciencequestions` (`Question`, `Option1`, `Option2`, `Option3`, `Op
 ('What is the function of the nervous system?', 'To control and coordinate the bodys functions', 'To filter blood', 'To digest food', 'To produce hormones', 'To control and coordinate the bodys functions', 'science', 'biology'),
 ('Which of the following is not a type of tissue in the human body?', 'Heart tissue', 'Muscle tissue', 'Nerve tissue', 'Leaf tissue', 'Leaf tissue', 'science', 'biology'),
 ('What is the role of the endocrine system?', 'To produce hormones', 'To digest food', 'To filter blood', 'To control movement', 'To produce hormones', 'science', 'biology'),
-('What is the function of the circulatory system?', 'To transport oxygen, nutrients, and waste products throughout the body', 'To produce hormones', 'To digest food', 'To filter blood', 'To transport oxygen, nutrients, and waste products throughout the body', 'science', 'biology'),
 ('Which of the following is NOT a component of the circulatory system?', 'Heart', 'Blood vessels', 'Lungs', 'Kidneys', 'Kidneys', 'science', 'biology'),
-('Which of the following is the correct order of the levels of biological organization from smallest t', 'Organism, cell, tissue, organ system, population', 'Cell, tissue, organism, organ system, population', 'Tissue, organ system, organism, cell, population', 'Cell, tissue, organ system, organism, population', 'Cell, tissue, organ system, organism, population', 'science', 'biology'),
-('Which of the following best describes the process of photosynthesis?', 'Conversion of light energy into chemical energy', 'Conversion of chemical energy into light energy', 'Conversion of thermal energy into chemical energy', 'Conversion of chemical energy into thermal energy', 'Conversion of light energy into chemical energy', 'science', 'biology'),
 ('Which of the following is an example of an abiotic factor in an ecosystem?', 'Trees', 'Water', 'Deer', 'Insects', 'Water', 'science', 'biology'),
 ('Which of the following is NOT part of the digestive system?', 'Lungs', 'Stomach', 'Small intestine', 'Large intestine', 'Lungs', 'science', 'biology'),
-('Which of the following is the correct order of the scientific method?', 'Hypothesis, observation, experiment, conclusion', 'Observation, experiment, hypothesis, conclusion', 'Experiment, hypothesis, observation, conclusion', 'Observation, hypothesis, experiment, conclusion', 'Observation, hypothesis, experiment, conclusion', 'science', 'biology'),
 ('Which of the following is an example of a herbivore?', 'Lion', 'Tiger', 'Deer', 'Wolf', 'Deer', 'science', 'biology'),
 ('Which of the following is NOT a type of tissue in the human body?', 'Muscle', 'Nerve', 'Bone', 'Vein', 'Vein', 'science', 'biology'),
-('Which of the following is the correct order of the phases of mitosis?', 'Prophase, metaphase, anaphase, telophase', 'Anaphase, telophase, prophase, metaphase', 'Metaphase, prophase, anaphase, telophase', 'Prophase, metaphase, telophase, anaphase', 'Prophase, metaphase, anaphase, telophase', 'science', 'biology'),
 ('Which of the following is an example of a parasite?', 'Bacteria', 'Fungus', 'Virus', 'Tick', 'Tick', 'science', 'biology'),
-('Which of the following is the function of the respiratory system?', 'To filter waste products from the blood', 'To transport nutrients throughout the body', 'To regulate body temperature', 'To exchange gases with the environment', 'To exchange gases with the environment', 'science', 'biology'),
 ('Which of the following is NOT part of the nervous system?', 'Stomach', 'Brain', 'Spinal cord', 'Nerves', 'Stomach', 'science', 'biology'),
 ('Which of the following is not a cell organelle?', 'nucleus', 'ribosome', 'enzyme', 'mitochondria', 'enzyme', 'science', 'biology'),
 ('Which of the following animals is a herbivore?', 'lion', 'penguin', 'hippopotamus', 'gazelle', 'gazelle', 'science', 'biology'),
 ('Which of the following is not a mammal?', 'whale', 'shark', 'lion', 'monkey', 'shark', 'science', 'biology'),
 ('Which of the following is not a type of blood vessel?', 'artery', 'vein', 'capillary', 'ligament', 'ligament', 'science', 'biology'),
+('Which of the following is NOT a component of the respiratory system?', 'Nose', 'Lungs', 'Heart', 'Trachea', 'Heart', 'science', 'biology'),
+('Which of the following is an example of a carnivorous animal?', 'Deer', 'Rabbit', 'Lion', 'Cow', 'Lion', 'science', 'biology'),
+('Which of the following is NOT a type of joint in the human body?', 'Hinge joint', 'Ball and socket joint', 'Saddle joint', 'Axial joint', 'Axial joint', 'science', 'biology'),
+('Which of the following is an example of a decomposer?', 'Mushroom', 'Lion', 'Deer', 'Wolf', 'Mushroom', 'science', 'biology'),
+('Which of the following is NOT a type of muscle tissue?', 'Skeletal muscle', 'Cardiac muscle', 'Smooth muscle', 'Epithelial muscle', 'Epithelial muscle', 'science', 'biology'),
+('Which of the following is an example of a reptile?', 'Alligator', 'Dolphin', 'Whale', 'Shark', 'Alligator', 'science', 'biology'),
+('Which of the following is NOT a part of the endocrine system?', 'Pancreas', 'Thyroid', 'Adrenal gland', 'Stomach', 'Stomach', 'science', 'biology'),
+('Which of the following is not a type of white blood cell?', 'Lymphocytes', 'Erythrocytes', 'Neutrophils', 'Monocytes', 'Erythrocytes', 'science', 'biology'),
+('Which of the following is an example of an omnivore?', 'Bear', 'Tiger', 'Kangaroo', 'Koala', 'Bear', 'science', 'biology'),
+('Which of the following is NOT a type of bone in the human body?', 'Femur', 'Humerus', 'Malleus', 'Radius', 'Malleus', 'science', 'biology'),
+('Which of the following is NOT a type of tissue in plants?', 'Epithelial tissue', 'Dermal tissue', 'Ground tissue', 'Vascular tissue', 'Epithelial tissue', 'science', 'biology'),
+('Which of the following is NOT a function of the skeletal system?', 'Production of blood cells', 'Protection of internal organs', 'Movement of the body', 'Regulation of body temperature', 'Regulation of body temperature', 'science', 'biology'),
 ('Which of the following is not a type of muscle?', 'skeletal', 'cardiac', 'voluntary', 'smooth', 'voluntary', 'science', 'biology'),
 ('Which of the following is not part of the digestive system?', 'liver', 'stomach', 'intestines', 'kidneys', 'kidneys', 'science', 'biology'),
-('What is the function of the respiratory system?', 'to transport oxygen around the body', 'to remove waste products from the body', 'to regulate body temperature', 'to protect the body from infection', 'to transport oxygen around the body', 'science', 'biology'),
+('What is the function of the respiratory system?', 'to transport oxygen', 'to remove waste products from the body', 'to regulate body temperature', 'to protect the body from infection', 'to transport oxygen', 'science', 'biology'),
 ('Which of the following is not a type of plant tissue?', 'epithelial', 'dermal', 'vascular', 'ground', 'epithelial', 'science', 'biology'),
 ('Which of the following is not a type of bone?', 'femur', 'sternum', 'cranium', 'metacarpal', 'metacarpal', 'science', 'biology'),
 ('Which of the following is not a type of joint?', 'hinge', 'ball and socket', 'gliding', 'fixed', 'fixed', 'science', 'biology'),
 ('What is the process by which plants release water vapor through their leaves called?', 'photosynthesis', 'transpiration', 'respiration', 'evaporation', 'transpiration', 'science', 'biology'),
 ('Which of the following is not a type of rock?', 'igneous', 'metamorphic', 'sedimentary', 'crystalline', 'crystalline', 'science', 'biology'),
 ('What is the smallest unit of matter?', 'molecule', 'atom', 'cell', 'organism', 'atom', 'science', 'biology'),
+('What is the process by which organisms break down food to release energy called?', 'Respiration', 'Photosynthesis', 'Digestion', 'Fermentation', 'Respiration', 'science', 'biology'),
+('What is the largest organ in the human body?', 'Skin', 'Liver', 'Heart', 'Brain', 'Skin', 'science', 'biology'),
+('What is the smallest bone in the human body?', 'Stapes', 'Femur', 'Humerus', 'Tibia', 'Stapes', 'science', 'biology'),
+('What is the name of the largest artery in the human body?', 'Aorta', 'Vena cava', 'Pulmonary artery', 'Coronary artery', 'Aorta', 'science', 'biology'),
+('What is the name of the smallest blood vessels in the human body?', 'Capillaries', 'Arteries', 'Veins', 'Bronchioles', 'Capillaries', 'science', 'biology'),
+('What is the name of the condition in which the lens of the eye becomes cloudy?', 'Cataract', 'Glaucoma', 'Astigmatism', 'Myopia', 'Cataract', 'science', 'biology'),
+('What is the name of the disease caused by the human immunodeficiency virus (HIV)?', 'AIDS', 'Hepatitis', 'Malaria', 'Tuberculosis', 'AIDS', 'science', 'biology'),
+('What is the name of the disorder in which the bodys immune system attacks its own tissues?', 'Autoimmune disease', 'Diabetes', 'Arthritis', 'Cancer', 'Autoimmune disease', 'science', 'biology'),
 ('Which of the following is not a type of energy?', 'potential', 'kinetic', 'nuclear', 'chemical', 'nuclear', 'science', 'biology'),
 ('What is the process by which a solid turns into a gas without passing through a liquid state called?', 'evaporation', 'sublimation', 'condensation', 'melting', 'sublimation', 'science', 'biology'),
-('What is the difference between an acid and a base?', 'An acid has a pH below 7, while a base has a pH above 7', 'An acid has a pH above 7, while a base has a pH below 7', 'An acid is a solid, while a base is a liquid', 'An acid is a liquid, while a base is a gas', 'An acid has a pH below 7, while a base has a pH above 7', 'science', 'chemistry'),
-('What is a pH scale?', 'A scale that measures how acidic or basic a substance is', 'A scale that measures how hot or cold a substance is', 'A scale that measures how dense a substance is', 'A scale that measures how heavy a substance is', 'A scale that measures how acidic or basic a substance is', 'science', 'chemistry'),
+('What is the process of converting sugar into alcohol called?', 'Fermentation', 'Distillation', 'Oxidation', 'Combustion', 'Fermentation', 'science', 'chemistry'),
+('What is the atomic number of hydrogen?', '1', '2', '3', '4', '1', 'science', 'chemistry'),
+('What is the chemical symbol for gold?', 'Au', 'Ag', 'Cu', 'Fe', 'Au', 'science', 'chemistry'),
+('What is the process of removing salt from seawater called?', 'Desalination', 'Purification', 'Filtration', 'Distillation', 'Desalination', 'science', 'chemistry'),
+('What is the chemical formula for sulfuric acid?', 'H2SO4', 'HCl', 'NaOH', 'NH3', 'H2SO4', 'science', 'chemistry'),
+('What is the chemical formula for hydrochloric acid?', 'HCl', 'H2SO4', 'NaOH', 'NH3', 'HCl', 'science', 'chemistry'),
+('What is the chemical formula for sodium chloride?', 'NaCl', 'HCl', 'H2SO4', 'NH3', 'NaCl', 'science', 'chemistry'),
+('What is the process of converting a gas into a liquid called?', 'Condensation', 'Evaporation', 'Sublimation', 'Melting', 'Condensation', 'science', 'chemistry'),
+('What is the process of converting a liquid into a gas called?', 'Evaporation', 'Condensation', 'Sublimation', 'Freezing', 'Evaporation', 'science', 'chemistry'),
+('What is the process of converting a solid into a gas called?', 'Sublimation', 'Condensation', 'Evaporation', 'Melting', 'Sublimation', 'science', 'chemistry'),
+('What is the process of converting a gas into a solid called?', 'Deposition', 'Condensation', 'Evaporation', 'Freezing', 'Deposition', 'science', 'chemistry'),
 ('What is the pH level of water?', '7', '1', '14', '10', '7', 'science', 'chemistry'),
 ('What is the pH level of vinegar?', '2-3', '7', '11-12', '4-5', '2-3', 'science', 'chemistry'),
 ('What is the pH level of lemon juice?', '2', '7', '11', '5', '2', 'science', 'chemistry'),
 ('What is the pH level of baking soda?', '9', '3', '7', '11', '9', 'science', 'chemistry'),
-('What is an acid-base indicator?', 'A substance that changes color in the presence of an acid or a base', 'A substance that neutralizes acids and bases', 'A substance that dissolves in water', 'A substance that changes shape when exposed to heat', 'A substance that changes color in the presence of an acid or a base', 'science', 'chemistry'),
 ('What is the most common gas in the Earths atmosphere?', 'Nitrogen', 'Oxygen', 'Carbon dioxide', 'Argon', 'Nitrogen', 'science', 'chemistry'),
 ('What gas do plants absorb during photosynthesis?', 'Carbon dioxide', 'Oxygen', 'Nitrogen', 'Hydrogen', 'Carbon dioxide', 'science', 'chemistry'),
-('What is photosynthesis?', 'The process by which plants make food using sunlight, carbon dioxide, and water', 'The process by which plants absorb water from the soil', 'The process by which plants produce oxygen', 'The process by which plants release carbon dioxide', 'The process by which plants make food using sunlight, carbon dioxide, and water', 'science', 'chemistry'),
 ('What is the chemical formula for glucose?', 'C6H12O6', 'H2O', 'CO2', 'NaCl', 'C6H12O6', 'science', 'chemistry'),
 ('What is the chemical formula for water?', 'H2O', 'CO2', 'NaCl', 'C6H12O6', 'H2O', 'science', 'chemistry'),
 ('What is the chemical formula for carbon dioxide?', 'CO2', 'H2O', 'NaCl', 'C6H12O6', 'CO2', 'science', 'chemistry'),
@@ -487,20 +508,22 @@ INSERT INTO `sciencequestions` (`Question`, `Option1`, `Option2`, `Option3`, `Op
 ('What is the chemical symbol for carbon?', 'C', 'O', 'H', 'N', 'C', 'science', 'chemistry'),
 ('What is the chemical symbol for hydrogen?', 'H', 'O', 'C', 'N', 'H', 'science', 'chemistry'),
 ('What is the chemical symbol for nitrogen?', 'N', 'C', 'H', 'O', 'N', 'science', 'chemistry'),
-('What is a chemical reaction?', 'A process that changes one or more substances into new substances', 'A process that changes the state of matter', 'A process that changes the temperature of a substance', 'A process that changes the shape of a substance', 'A process that changes one or more substances into new substances', 'science', 'chemistry'),
-('What is an element?', 'A substance made up of only one type of atom', 'A substance made up of two or more types of atoms', 'A substance made up of only one type of molecule', 'A substance made up of two or more types of molecules', 'A substance made up of only one type of atom', 'science', 'chemistry'),
-('What is a compound?', 'A substance made up of two or more types of atoms', 'A substance made up of only one type of atom', 'A substance made up of two or more types of molecules', 'A substance made up of only one type of molecule', 'A substance made up of two or more types of atoms', 'science', 'chemistry'),
-('What is a mixture?', 'A combination of two or more substances that are not chemically bonded', 'A combination of two or more substances that are chemically bonded', 'A substance made up of only one type of molecule', 'A substance made up of only one type of atom', 'A combination of two or more substances that are not chemically bonded', 'science', 'chemistry'),
-('What are hydrocarbons?', 'Organic compounds made of hydrogen and carbon atoms', 'Inorganic compounds made of hydrogen and oxygen atoms', 'Inorganic compounds made of carbon and oxygen atoms', 'Organic compounds made of carbon and oxygen atoms', 'Organic compounds made of hydrogen and carbon atoms', 'science', 'chemistry'),
+('What is the process of converting a solid into a liquid called?', 'Melting', 'Evaporation', 'Sublimation', 'Condensation', 'Melting', 'science', 'chemistry'),
+('What is the process of converting a liquid into a solid called?', 'Freezing', 'Condensation', 'Sublimation', 'Evaporation', 'Freezing', 'science', 'chemistry'),
+('What is the process of breaking down a compound into simpler substances called?', 'Decomposition', 'Synthesis', 'Combustion', 'Oxidation', 'Decomposition', 'science', 'chemistry'),
+('What is the process of combining two or more substances to form a new compound called?', 'Synthesis', 'Decomposition', 'Combustion', 'Oxidation', 'Synthesis', 'science', 'chemistry'),
+('What is the chemical formula for table salt?', 'NaCl', 'HCl', 'H2SO4', 'NH3', 'NaCl', 'science', 'chemistry'),
+('What is the chemical formula for methane?', 'CH4', 'CO2', 'H2O', 'O2', 'CH4', 'science', 'chemistry'),
+('What is the chemical formula for ammonia?', 'NH3', 'HCl', 'H2SO4', 'NaOH', 'NH3', 'science', 'chemistry'),
+('What is the chemical formula for sulfur dioxide?', 'SO2', 'CO2', 'H2O', 'O2', 'SO2', 'science', 'chemistry'),
+('What is the chemical formula for hydrofluoric acid?', 'HF', 'HCl', 'H2SO4', 'NaOH', 'HF', 'science', 'chemistry'),
+('What is the chemical formula for nitric acid?', 'HNO3', 'HCl', 'H2SO4', 'NaOH', 'HNO3', 'science', 'chemistry'),
+('What is the chemical formula for acetic acid?', 'CH3COOH', 'HCl', 'H2SO4', 'NaOH', 'CH3COOH', 'science', 'chemistry'),
+('What is the chemical formula for sodium hydroxide?', 'NaOH', 'HCl', 'H2SO4', 'NH3', 'NaOH', 'science', 'chemistry'),
+('What is the chemical formula for potassium hydroxide?', 'KOH', 'HCl', 'H2SO4', 'NH3', 'KOH', 'science', 'chemistry'),
 ('What is the main function of carbohydrates in our body?', 'To provide energy', 'To build muscle', 'To transport oxygen', 'To fight infection', 'To provide energy', 'science', 'chemistry'),
 ('What is the main function of proteins in our body?', 'To build and repair tissues', 'To store energy', 'To transport oxygen', 'To fight infection', 'To build and repair tissues', 'science', 'chemistry'),
 ('What is the main function of lipids in our body?', 'To store energy and provide insulation', 'To build muscle', 'To transport oxygen', 'To fight infection', 'To store energy and provide insulation', 'science', 'chemistry'),
-('What is the difference between a physical change and a chemical change?', 'A physical change does not change the identity of the substance, while a chemical change does', 'A physical change changes the identity of the substance, while a chemical change does not', 'A physical change involves a change in temperature, while a chemical change does not', 'A physical change involves a change in color, while a chemical change does not', 'A physical change does not change the identity of the substance, while a chemical change does', 'science', 'chemistry'),
-('What is a chemical reaction?', 'A process that changes one set of chemicals into another set of chemicals', 'A process that changes the temperature of a substance', 'A process that changes the color of a substance', 'A process that changes the shape of a substance', 'A process that changes one set of chemicals into another set of chemicals', 'science', 'chemistry'),
-('What is combustion?', 'A chemical reaction that involves the burning of a fuel', 'A chemical reaction that involves the mixing of two substances', 'A physical change that involves a change in temperature', 'A physical change that involves a change in color', 'A chemical reaction that involves the burning of a fuel', 'science', 'chemistry'),
-('What is oxidation?', 'A chemical reaction that involves the loss of electrons', 'A chemical reaction that involves the gain of electrons', 'A physical change that involves a change in temperature', 'A physical change that involves a change in color', 'A chemical reaction that involves the loss of electrons', 'science', 'chemistry'),
-('What is reduction?', 'A chemical reaction that involves the gain of electrons', 'A chemical reaction that involves the loss of electrons', 'A physical change that involves a change in temperature', 'A physical change that involves a change in color', 'A chemical reaction that involves the gain of electrons', 'science', 'chemistry'),
-('What is the force of gravity?', 'A force that pushes things apart', 'A force that pulls things together', 'A force that makes things spin', 'A force that changes direction', 'A force that pulls things together', 'science', 'physics'),
 ('How do magnets work?', 'They produce electricity', 'They attract or repel other magnets', 'They make things hot', 'They create sound waves', 'They attract or repel other magnets', 'science', 'physics'),
 ('How do we measure weight?', 'With a ruler', 'With a scale', 'With a thermometer', 'With a compass', 'With a scale', 'science', 'physics'),
 ('What is kinetic energy?', 'Energy from motion', 'Energy from sound', 'Energy from light', 'Energy from heat', 'Energy from motion', 'science', 'physics'),
@@ -509,16 +532,27 @@ INSERT INTO `sciencequestions` (`Question`, `Option1`, `Option2`, `Option3`, `Op
 ('How does a lever work?', 'By moving in a straight line', 'By rotating around a fixed point', 'By vibrating back and forth', 'By spinning in circles', 'By rotating around a fixed point', 'science', 'physics'),
 ('What is friction?', 'A force that pulls things apart', 'A force that pushes things together', 'A force that makes things spin', 'A force that changes direction', 'A force that pushes things together', 'science', 'physics'),
 ('How does air resistance affect falling objects?', 'It slows them down', 'It speeds them up', 'It makes them change direction', 'It makes them disappear', 'It slows them down', 'science', 'physics'),
-('What is the difference between speed and velocity?', 'Speed is how fast something is moving; velocity is how far it has gone', 'Speed is how far something has gone; velocity is how fast it is moving', 'There is no difference', 'Velocity is a type of speed', 'Speed is how fast something is moving; velocity is how far it has gone', 'science', 'physics'),
-('What is a conductor?', 'A material that electricity cannot flow through', 'A material that allows electricity to flow through it easily', 'A machine that generates electricity', 'A machine that stores electricity', 'A material that allows electricity to flow through it easily', 'science', 'physics'),
-('What is an insulator?', 'A material that electricity cannot flow through', 'A material that allows electricity to flow through it easily', 'A machine that generates electricity', 'A machine that stores electricity', 'A material that electricity cannot flow through', 'science', 'physics'),
 ('What is reflection?', 'The bending of light waves', 'The splitting of light into different colors', 'The bouncing of light off a surface', 'The blocking of light by an object', 'The bouncing of light off a surface', 'science', 'physics'),
 ('What is refraction?', 'The bending of light waves', 'The splitting of light into different colors', 'The bouncing of light off a surface', 'The blocking of light by an object', 'The bending of light waves', 'science', 'physics'),
 ('What is a prism?', 'A type of lens', 'A type of mirror', 'A device that splits white light into its colors', 'A device that reflects light in a single direction', 'A device that splits white light into its colors', 'science', 'physics'),
-('What is the law of conservation of energy?', 'Energy cannot be created or destroyed, only transformed from one form to another', 'Energy can be created or destroyed', 'Energy can only be transformed into heat', 'Energy cannot be transformed into motion', 'Energy cannot be created or destroyed, only transformed from one form to another', 'science', 'physics'),
-('What is the law of conservation of mass?', 'Mass cannot be created or destroyed, only transformed from one form to another', 'Mass can be created or destroyed', 'Mass can only be transformed into energy', 'Mass cannot be transformed into motion', 'Mass cannot be created or destroyed, only transformed from one form to another', 'science', 'physics'),
 ('What is sound?', 'A type of light wave', 'A type of electric wave', 'A type of magnetic wave', 'A type of mechanical wave', 'A type of mechanical wave', 'science', 'physics'),
 ('What is the speed of sound?', '343 meters per second', '186,000 miles per second', '1 meter per second', '10 meters per second', '343 meters per second', 'science', 'physics'),
+('Who discovered the law of gravity?', 'Isaac Newton', 'Albert Einstein', 'Galileo Galilei', 'Charles Darwin', 'Isaac Newton', 'science', 'physics'),
+('What is the equation for calculating work?', 'Work = Force x Distance', 'Work = Mass x Gravity', 'Work = Velocity x Acceleration', 'Work = Pressure x Volume', 'Work = Force x Distance', 'science', 'physics'),
+('What is the force that opposes motion called?', 'Friction', 'Gravity', 'Momentum', 'Inertia', 'Friction', 'science', 'physics'),
+('What is the energy of motion called?', 'Kinetic Energy', 'Potential Energy', 'Thermal Energy', 'Electric Energy', 'Kinetic Energy', 'science', 'physics'),
+('What is the law that states that for every action there is an equal and opposite reaction?', 'Newton’s Third Law', 'Newton’s First Law', 'Newton’s Second Law', 'The Law of Inertia', 'Newton’s Third Law', 'science', 'physics'),
+('What is the unit of measurement for force?', 'Newton', 'Watt', 'Joule', 'Volt', 'Newton', 'science', 'physics'),
+('What is the acceleration due to gravity?', '9.8 m/s^2', '8.2 m/s^2', '7.6 m/s^2', '6.4 m/s^2', '9.8 m/s^2', 'science', 'physics'),
+('What is the formula for calculating speed?', 'Speed = Distance/Time', 'Speed = Time/Distance', 'Speed = Force x Mass', 'Speed = Acceleration x Time', 'Speed = Distance/Time', 'science', 'physics'),
+('What is the formula for calculating power?', 'Power = Work/Time', 'Power = Force x Distance', 'Power = Mass x Acceleration', 'Power = Velocity x Acceleration', 'Power = Work/Time', 'science', 'physics'),
+('What is the unit of measurement for power?', 'Watt', 'Joule', 'Newton', 'Ampere', 'Watt', 'science', 'physics'),
+('What is the formula for calculating pressure?', 'Pressure = Force/Area', 'Pressure = Work/Time', 'Pressure = Mass x Acceleration', 'Pressure = Velocity x Acceleration', 'Pressure = Force/Area', 'science', 'physics'),
+('What is the unit of measurement for pressure?', 'Pascal', 'Watt', 'Newton', 'Ampere', 'Pascal', 'science', 'physics'),
+('What is the formula for calculating density?', 'Density = Mass/Volume', 'Density = Force/Area', 'Density = Work/Time', 'Density = Velocity x Time', 'Density = Mass/Volume', 'science', 'physics'),
+('What is the unit of measurement for density?', 'Kilogram per cubic meter', 'Meter per second', 'Pascal second', 'Joule per second', 'Kilogram per cubic meter', 'science', 'physics'),
+('What is the formula for calculating acceleration?', 'Acceleration = (Final Velocity - Initial Velocity)/Time', 'Acceleration = Force/Mass', 'Acceleration = Velocity/Time', 'Acceleration = Work/Time', 'Acceleration = (Final Velocity - Initial Velocity)/Time', 'science', 'physics'),
+('What is the unit of measurement for acceleration?', 'Meter per second squared', 'Kilogram meter per second', 'Newton second per meter', 'Joule per second', 'Meter per second squared', 'science', 'physics'),
 ('What is frequency?', 'The number of waves that pass by a point in a given amount of time', 'The distance between two points on a wave', 'The height of a wave', 'The shape of a wave', 'The number of waves that pass by a point in a given amount of time', 'science', 'physics'),
 ('What is wavelength?', 'The distance between two points on a wave', 'The number of waves that pass by a point in a given amount of time', 'The height of a wave', 'The shape of a wave', 'The distance between two points on a wave', 'science', 'physics'),
 ('What is amplitude?', 'The height of a wave', 'The distance between two points on a wave', 'The number of waves that pass by a point in a given amount of time', 'The shape of a wave', 'The height of a wave', 'science', 'physics'),
@@ -530,21 +564,11 @@ INSERT INTO `sciencequestions` (`Question`, `Option1`, `Option2`, `Option3`, `Op
 ('What is an electric current?', 'The flow of electricity through a circuit', 'The resistance to electricity in a circuit', 'The amount of electricity in a circuit', 'The voltage of electricity in a circuit', 'The flow of electricity through a circuit', 'science', 'physics'),
 ('What is voltage?', 'The force that pushes electricity through a circuit', 'The flow of electricity through a circuit', 'The resistance to electricity in a circuit', 'The amount of electricity in a circuit', 'The force that pushes electricity through a circuit', 'science', 'physics'),
 ('What is resistance?', 'The opposition to the flow of electricity in a circuit', 'The force that pushes electricity through a circuit', 'The amount of electricity in a circuit', 'The voltage of electricity in a circuit', 'The opposition to the flow of electricity in a circuit', 'science', 'physics'),
-('What is a battery?', 'A device that stores electrical energy', 'A device that creates electrical energy', 'A device that converts electrical energy into mechanical energy', 'A device that converts mechanical energy into electrical energy', 'A device that stores electrical energy', 'science', 'physics'),
-('What is an insulator?', 'A material that does not allow electricity to flow through it easily', 'A material that allows electricity to flow through it easily', 'A material that stores electricity', 'A material that creates electricity', 'A material that does not allow electricity to flow through it easily', 'science', 'physics'),
-('What is a conductor?', 'A material that allows electricity to flow through it easily', 'A material that does not allow electricity to flow through it easily', 'A material that stores electricity', 'A material that creates electricity', 'A material that allows electricity to flow through it easily', 'science', 'physics'),
-('What is Ohms law?', 'The relationship between voltage, current, and resistance in a circuit', 'The relationship between electricity and magnetism', 'The relationship between light and sound', 'The relationship between energy and matter', 'The relationship between voltage, current, and resistance in a circuit', 'science', 'physics'),
-('What is a magnetic field?', 'The area around a magnet where its force can be detected', 'The area around a battery where its force can be detected', 'The area around an electric circuit where its force can be detected', 'The area around a wire where its force can be detected', 'The area around a magnet where its force can be detected', 'science', 'physics'),
-('What is a magnetic pole?', 'The ends of a magnet where its force is strongest', 'The center of a magnet where its force is strongest', 'The sides of a magnet where its force is strongest', 'The area around a magnet where its force is strongest', 'The ends of a magnet where its force is strongest', 'science', 'physics'),
 ('What is a magnetic force?', 'The force that attracts or repels magnets', 'The force that moves magnets', 'The force that creates magnets', 'The force that stores magnets', 'The force that attracts or repels magnets', 'science', 'physics'),
-('What is a magnetic domain?', 'A region in a magnet where the atoms are all aligned', 'A region in a magnet where the atoms are randomly aligned', 'A region in a magnet where the atoms are moving', 'A region in a magnet where the atoms are not aligned', 'A region in a magnet where the atoms are all aligned', 'science', 'physics'),
 ('What is a compass?', 'A device that uses Earths magnetic field to show direction', 'A device that measures voltage', 'A device that measures current', 'A device that measures resistance', 'A device that uses Earths magnetic field to show direction', 'science', 'physics'),
-('What is static electricity?', 'A build-up of electric charge on the surface of an object', 'A build-up of magnetic charge on the surface of an object', 'A build-up of light energy on the surface of an object', 'A build-up of sound energy on the surface of an object', 'A build-up of electric charge on the surface of an object', 'science', 'physics'),
 ('What is a lightning rod?', 'A device that protects buildings from lightning strikes', 'A device that creates lightning', 'A device that attracts lightning', 'A device that measures lightning', 'A device that protects buildings from lightning strikes', 'science', 'physics'),
 ('What is an atom?', 'The basic building block of matter', 'The basic building block of energy', 'The basic building block of electricity', 'The basic building block of magnetism', 'The basic building block of matter', 'science', 'physics'),
-('What is a molecule?', 'A group of atoms bonded together', 'A group of electrons bonded together', 'A group of protons bonded together', 'A group of neutrons bonded together', 'A group of atoms bonded together', 'science', 'physics'),
-('What is a solid?', 'A state of matter that has a fixed shape and volume', 'A state of matter that has a fixed shape but not a fixed volume', 'A state of matter that has a fixed volume but not a fixed shape', 'A state of matter that does not have a fixed shape or volume', 'A state of matter that has a fixed shape and volume', 'science', 'physics'),
-('What is a liquid?', 'A state of matter that has a fixed volume but not a fixed shape', 'A state of matter that has a fixed shape and volume', 'A state of matter that does not have a fixed shape or volume', 'A state of matter that has a fixed shape but not a fixed volume', 'A state of matter that has a fixed volume but not a fixed shape', 'science', 'physics');
+('What is a molecule?', 'A group of atoms bonded together', 'A group of electrons bonded together', 'A group of protons bonded together', 'A group of neutrons bonded together', 'A group of atoms bonded together', 'science', 'physics');
 
 -- --------------------------------------------------------
 
@@ -620,7 +644,7 @@ INSERT INTO `studentprogress_maths` (`username`, `mathsoverall`, `overallaverage
 ('testingforeign', 0, 0, 0, 0, 0, 0, 0, 0),
 ('testuser2', 0, 0, 0, 0, 0, 0, 0, 0),
 ('yasi', 0, 0, 0, 0, 0, 0, 0, 0),
-('yasin', 0, 0, 19, 10, 19, 9, 22, 8);
+('yasin', 0, 0, 28, 15, 29, 11, 33, 10);
 
 -- --------------------------------------------------------
 
