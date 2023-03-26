@@ -21,7 +21,7 @@ public class compRetreival : MonoBehaviour
         StartCoroutine(computingRetrieval());
     }
 
-    IEnumerator computingRetrieval()
+    public static IEnumerator computingRetrieval()
     {
         // Get the username from the Servers script
         string usernameused = Servers.currentusername;

@@ -1742,6 +1742,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45c79b78127b3143968f82bd1011122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &432993344
 MonoBehaviour:
   m_ObjectHideFlags: 0

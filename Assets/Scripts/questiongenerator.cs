@@ -87,9 +87,9 @@ public class questiongenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        questionoutput.updates = false;
         panel.SetActive(false);//makes sure the window is not active
-        questiondisplayed = false;
-        questionnumber = 1;
+
         if (beginQuiz.parsedsubject == "maths")
         {
             question1 = QuestionLoaderMaths.question1;
@@ -197,6 +197,7 @@ public class questiongenerator : MonoBehaviour
 
 
     }
+    
 
 
 
@@ -208,15 +209,18 @@ public class questiongenerator : MonoBehaviour
     {
         //Debug.Log(beginQuiz.parsedsubject);
         enabled = true;
-       
+        
+
 
         if (questiondisplayed == false) //checks if there is a question being displayed
         {
-
+            if (questionnumber == 0)
+            {
+                questionnumber++;
+            }
 
             if (questionnumber == 1)
             {
-                questiondisplayed = true;// there is a question being displayed.
                                          //taking the next question variables from the previous script
                 questionoutput.nextquestion = question1[0];
                 questionoutput.nextanswer1 = question1[3];
@@ -562,6 +566,7 @@ public class questiongenerator : MonoBehaviour
                 //questiondisplayed = true;
                 panel.SetActive(true);//makes sure the window is not active
                 StartCoroutine(Savedata());//call the coroutine for the end of the quiz
+                questionnumber = 1;
                 enabled = false;
 
 

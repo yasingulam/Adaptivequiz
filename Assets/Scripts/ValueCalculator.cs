@@ -1,35 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using System;
-
 public class ValueCalculator : MonoBehaviour
 {
-    //create public static ints for the existing values we have because they are strings
+    public static int algebraAsked;
+    public static int algebraCorrect;
+    public static int arithmeticAsked;
+    public static int arithmeticCorrect;
+    public static int fdpAsked;
+    public static int fdpCorrect;
 
-    public static int algebraAsked = int.Parse(mathRetreival.algebraAsked);
-    public static int algebraCorrect = int.Parse(mathRetreival.algebraCorrect);
-    public static int arithmeticAsked = int.Parse(mathRetreival.arithmeticAsked);
-    public static int arithmeticCorrect = int.Parse(mathRetreival.arithmeticCorrect);
-    public static int fdpAsked = int.Parse(mathRetreival.fdpAsked);
-    public static int fdpCorrect = int.Parse(mathRetreival.fdpCorrect);
+    public static int biologyAsked;
+    public static int biologyCorrect;
+    public static int chemistryAsked;
+    public static int chemistryCorrect;
+    public static int physicsAsked;
+    public static int physicsCorrect;
 
-    public static int biologyAsked = int.Parse(scienceRetreival.biologyAsked);
-    public static int biologyCorrect = int.Parse(scienceRetreival.biologyCorrect);
-    public static int chemistryAsked = int.Parse(scienceRetreival.chemistryAsked);
-    public static int chemistryCorrect = int.Parse(scienceRetreival.chemistryCorrect);
-    public static int physicsAsked = int.Parse(scienceRetreival.physicsAsked);
-    public static int physicsCorrect = int.Parse(scienceRetreival.physicsCorrect);
-
-    public static int hardwareAsked = int.Parse(compRetreival.hardwareAsked);
-    public static int hardwareCorrect = int.Parse(compRetreival.hardwareCorrect);
-    public static int softwareAsked = int.Parse(compRetreival.softwareAsked);
-    public static int softwareCorrect = int.Parse(compRetreival.softwareCorrect);
-    public static int programmingAsked = int.Parse(compRetreival.programmingAsked);
-    public static int programmingCorrect = int.Parse(compRetreival.programmingCorrect);
-
-
+    public static int hardwareAsked;
+    public static int hardwareCorrect;
+    public static int softwareAsked;
+    public static int softwareCorrect;
+    public static int programmingAsked;
+    public static int programmingCorrect;
 
     public static int totalmathsasked;
     public static int totalmathscorrect;
@@ -38,7 +32,6 @@ public class ValueCalculator : MonoBehaviour
     public static int totalcomputingasked;
     public static int totalcomputingcorrect;
 
-    //percentages for each topic
     public static int algebrapercentage;
     public static int arithmeticpercentage;
     public static int fdppercentage;
@@ -49,10 +42,34 @@ public class ValueCalculator : MonoBehaviour
     public static int softwarepercentage;
     public static int programmingpercentage;
 
-
-    // Start is called before the first frame update
     void Start()
     {
+        UpdateValues();
+    }
+
+    public static void UpdateValues()
+    {
+        algebraAsked = int.Parse(mathRetreival.algebraAsked);
+        algebraCorrect = int.Parse(mathRetreival.algebraCorrect);
+        arithmeticAsked = int.Parse(mathRetreival.arithmeticAsked);
+        arithmeticCorrect = int.Parse(mathRetreival.arithmeticCorrect);
+        fdpAsked = int.Parse(mathRetreival.fdpAsked);
+        fdpCorrect = int.Parse(mathRetreival.fdpCorrect);
+
+        biologyAsked = int.Parse(scienceRetreival.biologyAsked);
+        biologyCorrect = int.Parse(scienceRetreival.biologyCorrect);
+        chemistryAsked = int.Parse(scienceRetreival.chemistryAsked);
+        chemistryCorrect = int.Parse(scienceRetreival.chemistryCorrect);
+        physicsAsked = int.Parse(scienceRetreival.physicsAsked);
+        physicsCorrect = int.Parse(scienceRetreival.physicsCorrect);
+
+        hardwareAsked = int.Parse(compRetreival.hardwareAsked);
+        hardwareCorrect = int.Parse(compRetreival.hardwareCorrect);
+        softwareAsked = int.Parse(compRetreival.softwareAsked);
+        softwareCorrect = int.Parse(compRetreival.softwareCorrect);
+        programmingAsked = int.Parse(compRetreival.programmingAsked);
+        programmingCorrect = int.Parse(compRetreival.programmingCorrect);
+
         //genearal totals of questions asked and questions correct
         totalmathsasked = algebraAsked + arithmeticAsked + fdpAsked;
         totalscienceasked = biologyAsked + chemistryAsked + physicsAsked;
@@ -122,4 +139,3 @@ public class ValueCalculator : MonoBehaviour
     }
 
 }
-

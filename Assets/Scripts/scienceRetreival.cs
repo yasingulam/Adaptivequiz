@@ -21,7 +21,7 @@ public class scienceRetreival : MonoBehaviour
         StartCoroutine(ScienceRetrievalCoroutine());
     }
 
-    IEnumerator ScienceRetrievalCoroutine()
+    public static IEnumerator ScienceRetrievalCoroutine()
     {
         // Get the username from the Servers script
         string usernameUsed = Servers.currentusername;

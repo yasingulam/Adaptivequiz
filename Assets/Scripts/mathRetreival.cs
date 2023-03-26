@@ -21,7 +21,7 @@ public class mathRetreival : MonoBehaviour
         StartCoroutine(mathRetrievalCoroutine());
     }
 
-    IEnumerator mathRetrievalCoroutine()
+    public static IEnumerator mathRetrievalCoroutine()
     {
         // Get the username from the Servers script
         string usernameused = Servers.currentusername;

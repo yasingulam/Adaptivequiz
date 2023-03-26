@@ -1313,13 +1313,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
     m_FontSize: 20
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1351,8 +1351,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 66, y: -237}
-  m_SizeDelta: {x: 150, y: 33.5653}
+  m_AnchoredPosition: {x: 69, y: -233}
+  m_SizeDelta: {x: 150, y: 40.001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1536030086
 GameObject:
@@ -2103,6 +2103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acc3495029966d4284ed56ef1e1a02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: GameSettings
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &2140549788
 MonoBehaviour:
   m_ObjectHideFlags: 0
