@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Displayanalytics : MonoBehaviour
 {
 
+    public Text currentuser;
     //define the gameobjects as variables.
     public Text totalMathsAskedText;
     public Text totalScienceAskedText;
@@ -57,7 +58,7 @@ public class Displayanalytics : MonoBehaviour
         int hardwarePercentage = ValueCalculator.hardwarepercentage;
         int softwarePercentage = ValueCalculator.softwarepercentage;
         int programmingPercentage = ValueCalculator.programmingpercentage;
-
+        currentuser.text = Servers.currentusername;
         // Update the text objects with the values
         totalMathsAskedText.text = "Total Maths Asked: " + totalMathsAsked.ToString();
         totalScienceAskedText.text = "Total Science Asked: " + totalScienceAsked.ToString();
