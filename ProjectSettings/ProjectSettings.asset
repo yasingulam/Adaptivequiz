@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Yasingames
   productName: TaylorsTest
-  defaultCursor: {fileID: 2800000, guid: 3bfae0a129c152d4a98422a576e7921b, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 26e3f059f7dece8458cdd7572148df08, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
