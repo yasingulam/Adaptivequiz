@@ -9,6 +9,7 @@ public class QuiztoMenu : MonoBehaviour
 
     public void quuiztomenu()
     {
+        questiongenerator.questionnumber = 0;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Initiate.Fade(scene, loadToColor, 2.3f);
     }

@@ -32,6 +32,4 @@ public class TeacherLogin : MonoBehaviour
         }
 
     }
-}///a public Button variable called "loginButton" that should be linked to the login button object in the Unity editor.
-//In the Start() method, it adds a listener to the onClick event of the login button, which calls the CheckPin() method when the button is pressed.
-//This way the pin is only checked when the button is pressed.
+}
